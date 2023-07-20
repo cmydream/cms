@@ -23,4 +23,8 @@ public interface CategoryService extends IService<Category> {
     CategoryDto upQueryTreeNodes(Long id);
 
     void saveTreeNodes(SaveCategoryDto saveCategoryDto);
+
+    void deleteId(Long Id);
+
+    void updateStatus(Long id);
 }

@@ -26,6 +26,15 @@
         SELECT *  FROM t1 WHERE STATUS = 1
 
     </select>
+    <select id="selectTreeNodesWithoutStatus" resultType="com.xuecheng.content.model.dto.CategoryDto" parameterType="long">
+        WITH recursive t1 AS (
+            SELECT * FROM  category p WHERE  p.id = #{id}
+            UNION ALL
+            SELECT t.* FROM category t INNER JOIN t1 ON t1.id = t.parentid
+        )
+        SELECT *  FROM t1
+        ORDER BY GRADE
+    </select>
 
     <select id="allQueryTreeNodes" resultType="com.xuecheng.content.model.dto.CategoryDto" >
         SELECT *
@@ -49,5 +58,6 @@
         FROM category p
         WHERE p.parentid = #{parentid}
     </select>
+
 
 </mapper>

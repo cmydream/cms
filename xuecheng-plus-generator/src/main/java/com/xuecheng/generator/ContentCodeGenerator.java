@@ -16,12 +16,12 @@ import java.util.Arrays;
 public class ContentCodeGenerator {
 
 	// TODO 修改服务名以及数据表名
-	private static final String SERVICE_NAME = "cms";
+	private static final String SERVICE_NAME = "xc402_system";
 
 	//数据库账号
 	private static final String DATA_SOURCE_USER_NAME  = "root";
 	//数据库密码
-	private static final String DATA_SOURCE_PASSWORD  = "c13523455263.";
+	private static final String DATA_SOURCE_PASSWORD  = "12345678";
 	//生成的表
 	private static final String[] TABLE_NAMES = new String[]{
 //			"mq_message",

@@ -24,4 +24,7 @@ public interface CategoryMapper extends BaseMapper<Category> {
     Integer getMAXOrderby(Long parentid);
 
 
+    void updateStatus(Long statusId);
+
+    List<CategoryDto> selectTreeNodesWithoutStatus(Long id);
 }

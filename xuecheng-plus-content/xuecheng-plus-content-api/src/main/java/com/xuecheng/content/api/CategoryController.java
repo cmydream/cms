@@ -3,6 +3,7 @@ package com.xuecheng.content.api;
 import com.xuecheng.content.model.dto.CategoryDto;
 import com.xuecheng.content.model.dto.SaveCategoryDto;
 import com.xuecheng.content.service.CategoryService;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -61,5 +62,25 @@ public class CategoryController {
 
     }
 
+    /**
+     *
+     * @description 分类删除
+     */
+    @ApiOperation("分类删除")
+    @DeleteMapping("/deleteId/{Id}")
+    public void deleteId(@PathVariable Long Id) {
 
+        categoryService.deleteId(Id);
+    }
+
+    /**
+     *
+     * @description 分类状态更新
+     */
+    @ApiOperation("分类更新")
+    @PostMapping ("/updateStatus/{Id}")
+    public void updateStatus(@PathVariable Long Id) {
+
+        categoryService.updateStatus(Id);
+    }
 }
