@@ -39,8 +39,15 @@
             UNION ALL
             SELECT t.* FROM category t INNER JOIN t1 ON t1.parentid = t.id
         )
-        SELECT *  FROM t1  WHERE STATUS = 1
+        SELECT *  FROM t1
+        WHERE STATUS = 1
+        ORDER BY GRADE
 
+    </select>
+    <select id="getMAXOrderby" resultType="java.lang.Integer">
+        SELECT MAX(p.orderby)
+        FROM category p
+        WHERE p.parentid = #{parentid}
     </select>
 
 </mapper>

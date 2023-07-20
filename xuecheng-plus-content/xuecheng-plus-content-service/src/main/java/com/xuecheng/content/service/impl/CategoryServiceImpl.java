@@ -1,5 +1,6 @@
 package com.xuecheng.content.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.xuecheng.content.mapper.CategoryMapper;
 import com.xuecheng.content.model.dto.CategoryDto;
@@ -116,8 +117,13 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryMapper, Category> i
             BeanUtils.copyProperties(saveCategoryDto,category);
             categoryMapper.updateById(category);
         }else {
-
+            Integer maxOrderby = categoryMapper.getMAXOrderby(saveCategoryDto.getParentid());
+            Category category = new Category();
+            BeanUtils.copyProperties(saveCategoryDto,category);
+            category.setOrderby(maxOrderby+1);
+            categoryMapper.insert(category);
         }
-
     }
+
+
 }

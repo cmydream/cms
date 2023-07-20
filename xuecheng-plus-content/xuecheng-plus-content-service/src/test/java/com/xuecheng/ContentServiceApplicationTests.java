@@ -38,7 +38,16 @@ class ContentServiceApplicationTests {
 
     @Test
     void testUpQueryTreeNodesMapper(){
-        List<CategoryDto> categoryDtos = categoryMapper.upQueryTreeNodes(10L);
+        Integer maxOrderby = categoryMapper.getMAXOrderby(0L);
+        System.out.println(maxOrderby);
+
+    }
+
+
+
+    @Test
+    void testselctTreeNodesMapper(){
+        List<CategoryDto> categoryDtos = categoryMapper.selectTreeNodes(1L);
         System.out.println(categoryDtos);
 
     }

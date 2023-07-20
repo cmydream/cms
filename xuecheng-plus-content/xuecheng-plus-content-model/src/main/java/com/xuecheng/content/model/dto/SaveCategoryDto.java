@@ -1,5 +1,6 @@
 package com.xuecheng.content.model.dto;
 
+import com.xuecheng.content.model.po.Category;
 import lombok.Data;
 import lombok.ToString;
 
@@ -13,5 +14,5 @@ import java.io.Serializable;
  */
 @Data
 @ToString
-public class SaveCategoryDto extends CategoryDto implements Serializable {
+public class SaveCategoryDto extends Category implements Serializable {
 }

@@ -16,9 +16,12 @@ import java.util.List;
  */
 @Repository
 public interface CategoryMapper extends BaseMapper<Category> {
-    public List<CategoryDto> selectTreeNodes(Long id);
-    public List<CategoryDto> allQueryTreeNodes();
+    List<CategoryDto> selectTreeNodes(Long id);
+    List<CategoryDto> allQueryTreeNodes();
 
-    public List<CategoryDto> upQueryTreeNodes(Long id);
+    List<CategoryDto> upQueryTreeNodes(Long id);
+
+    Integer getMAXOrderby(Long parentid);
+
 
 }

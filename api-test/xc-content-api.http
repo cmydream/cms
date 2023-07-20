@@ -9,3 +9,24 @@ Content-Type: application/json
 ###查询所有目录
 GET {{content_host}}/content/all-tree-nodes
 Content-Type: application/json
+
+### 创建目录
+POST {{content_host}}/content/save-tree-nodes
+Content-Type: application/json
+
+{
+  "name": "弹性云服务器优势",
+  "parentid": 8,
+  "grade": 4
+}
+
+### 修改目录
+POST {{content_host}}/content/save-tree-nodes
+Content-Type: application/json
+
+{
+  "id": 21,
+  "name": "弹性云服务器优势1.0",
+  "parentid": 8,
+  "grade": 4
+}
