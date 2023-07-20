@@ -1,0 +1,11 @@
+###目录查询，由父到子
+GET {{content_host}}/content/down-tree-nodes/2
+Content-Type: application/json
+
+###目录查询，由子到父
+GET {{content_host}}/content/up-tree-nodes/10
+Content-Type: application/json
+
+###查询所有目录
+GET {{content_host}}/content/all-tree-nodes
+Content-Type: application/json
